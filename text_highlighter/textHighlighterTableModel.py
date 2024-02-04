@@ -27,7 +27,7 @@ class TextHighlighterTableModel(QAbstractTableModel):
         if role != Qt.DisplayRole:
             return None
         if orientation == Qt.Horizontal:
-            return ("Text/Pattern", "Foreground", "Background", "Italic", "Bold")[section]
+            return ("Text/Pattern", "Foreground", "Background", "Italic", "Bold", "Font Size")[section]
         else:  # vertical
             return f"{section}"
 
@@ -54,13 +54,15 @@ class TextHighlighterTableModel(QAbstractTableModel):
         elif column == 4:
             if role == Qt.CheckStateRole:
                 self.settings[row].bold = bool(value)
+        elif column == 5:
+            self.settings[row].font_size = int(value)
 
         self.dataChanged.emit(index, index)
         return True
 
     def flags(self, index):
         f = Qt.ItemIsSelectable | Qt.ItemIsEnabled
-        if index.column() in [0, 1, 2]:
+        if index.column() in [0, 1, 2, 5]:
             f |= Qt.ItemIsEditable
         elif index.column() == 3 or index.column() == 4:
             f |= Qt.ItemIsUserCheckable
@@ -69,6 +71,8 @@ class TextHighlighterTableModel(QAbstractTableModel):
     def data(self, index, role=Qt.DisplayRole):
         column = index.column()
         row = index.row()
+
+        # TODO clean up this mess
 
         if role == TextHighlighterTableModel.AllColorsRole:
             return self.color_map.values()
@@ -82,6 +86,8 @@ class TextHighlighterTableModel(QAbstractTableModel):
         if role == Qt.DisplayRole or role == Qt.EditRole:
             if column == 0:
                 return self.settings[row].pattern
+            elif column == 5:
+                return self.settings[row].font_size
         elif role == Qt.CheckStateRole:
             if column == 3:
                 value = self.settings[row].italic
@@ -97,7 +103,8 @@ class TextHighlighterTableModel(QAbstractTableModel):
             if column == 0:
                 return self.color_map[self.settings[row].color_foreground][2]
         elif role == Qt.TextAlignmentRole:
-            return Qt.AlignRight
+            if column == 0:
+                return Qt.AlignRight
         return None
 
     def insertRows(self, row, count, parent=QModelIndex()):

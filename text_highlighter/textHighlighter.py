@@ -22,6 +22,7 @@ class TextHighlighter(QSyntaxHighlighter):
                 text_format = QTextCharFormat()
                 text_format.setFontItalic(bool(setting.italic))
                 text_format.setFontWeight(bool(setting.bold))
+                text_format.setFontPointSize(int(setting.font_size))
                 text_format.setForeground(QColor(setting.color_foreground))
                 text_format.setBackground(QColor(setting.color_background))
 

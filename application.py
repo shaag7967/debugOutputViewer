@@ -56,6 +56,7 @@ class Application(QApplication):
         cfg.color_background = 'white'
         cfg.italic = False
         cfg.bold = False
+        cfg.font_size = QApplication.font().pointSize()
         self.highlighterSettings.append(cfg)
 
         cfg = TextHighlighterConfig()
@@ -64,6 +65,7 @@ class Application(QApplication):
         cfg.color_background = 'white'
         cfg.italic = False
         cfg.bold = False
+        cfg.font_size = QApplication.font().pointSize()
         self.highlighterSettings.append(cfg)
 
     @Slot(object)
@@ -177,6 +179,7 @@ class Application(QApplication):
                     cfg.color_background = settings.value("color_background")
                     cfg.italic = settings.value("italic", type=bool)
                     cfg.bold = settings.value("bold", type=bool)
+                    cfg.font_size = settings.value("font_size", type=int)
                     self.highlighterSettings.append(cfg)
             settings.endArray()
         else:
@@ -196,7 +199,7 @@ class Application(QApplication):
             settings.setValue("color_background", cfg.color_background)
             settings.setValue("italic", cfg.italic)
             settings.setValue("bold", cfg.bold)
-
+            settings.setValue("font_size", cfg.font_size)
         settings.endArray()
 
     @Slot()

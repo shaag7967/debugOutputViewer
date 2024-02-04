@@ -4,33 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4dfaf59-c122-422a-8833-5647540ddbb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/DebugOutputViewer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createDebugOutputDialog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/debugOutput.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/debugOutputController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/debugOutputViewer.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/debugOutputWindow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainWindow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text_highlighter/textHighlighter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text_highlighter/textHighlighterConfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text_highlighter/textHighlighterTableModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text_highlighter/textHightlighterSettingsDialog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/createDebugOutputDialog.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/debugOutputWindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/mainWindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/textHighlightingSettings.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/uiFileHelper.py" afterDir="false" />
+    <list default="true" id="d4dfaf59-c122-422a-8833-5647540ddbb7" name="Changes" comment="Initial version">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_highlighter/textHighlighter.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_highlighter/textHighlighter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_highlighter/textHighlighterConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_highlighter/textHighlighterConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_highlighter/textHighlighterTableModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_highlighter/textHighlighterTableModel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +19,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "shaag7967"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fd9c1a29-f312-4a3d-971a-4f5fd3c75718" />
+        <option name="url" value="https://github.com/shaag7967/debugOutputViewer.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -56,7 +50,7 @@
     &quot;Python.Run.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/shaag/Documents/projekte/DebugOutputViewer&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
@@ -112,10 +106,30 @@
       <option name="presentableId" value="Default" />
       <updated>1705680631533</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial version">
+      <option name="closed" value="true" />
+      <created>1707055048845</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707055048845</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.qss" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -127,5 +141,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial version" />
   </component>
 </project>

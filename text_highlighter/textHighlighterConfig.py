@@ -1,6 +1,7 @@
 
+# TODO think about using a dict for this
 class TextHighlighterConfig:
-    number_of_attributes = 5
+    number_of_attributes = 6
 
     def __init__(self):
         self.pattern = r"some text"
@@ -8,9 +9,11 @@ class TextHighlighterConfig:
         self.color_background = 'white'
         self.italic = False
         self.bold = False
+        self.font_size = 9
 
     def __str__(self):
         return (f"{self.pattern}: "
                 f"  front {self.color_foreground} | back {self.color_background}"
-                f"{' | italic' if self.italic is True else ''}{' | bold' if self.bold is True else ''}")
+                f"{' | italic' if self.italic is True else ''}{' | bold' if self.bold is True else ''}"
+                f" | font size {self.font_size}")
 
