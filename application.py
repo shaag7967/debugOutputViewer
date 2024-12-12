@@ -52,19 +52,19 @@ class Application(QApplication):
 
         cfg = TextHighlighterConfig()
         cfg.pattern = r'<DBGVMSG: .* :GSMVGBD>'
-        cfg.color_foreground = 'black'
+        cfg.color_foreground = 'darkgreen'
         cfg.color_background = 'white'
         cfg.italic = False
-        cfg.bold = False
+        cfg.bold = True
         cfg.font_size = QApplication.font().pointSize()
         self.highlighterSettings.append(cfg)
 
         cfg = TextHighlighterConfig()
         cfg.pattern = r'<DBGVERR: .* :RREVGBD>'
-        cfg.color_foreground = 'black'
+        cfg.color_foreground = 'darkred'
         cfg.color_background = 'white'
         cfg.italic = False
-        cfg.bold = False
+        cfg.bold = True
         cfg.font_size = QApplication.font().pointSize()
         self.highlighterSettings.append(cfg)
 
@@ -80,13 +80,12 @@ class Application(QApplication):
         self.mainWindow.showDebugOutputCreateDialog(already_used_ports)
 
     @Slot(str, SerialConnectionSettings)
-    def createDebugOutput(self, window_title: str, settings: SerialConnectionSettings,
-                          size: QSize = None, pos: QPoint = None):
+    def createDebugOutput(self, window_title: str, settings: SerialConnectionSettings, size: QSize = None):
         if settings.portName in self.controller:
             raise Exception(f"DebugOutput {settings.portName} exists already")
 
         debug_output = DebugOutput(settings)
-        view = self.mainWindow.createDebugOutputView(window_title, size, pos)
+        view = self.mainWindow.createDebugOutputView(window_title, size)
         view.setHighlighterSettings(self.highlighterSettings)
         ctrl = DebugOutputController(debug_output, view)
 
@@ -140,9 +139,9 @@ class Application(QApplication):
             settings.setArrayIndex(i)
 
             # check if all needed keys exist
-            if all(elem in settings.allKeys() for elem in ['debugOutput', 'view/pos', 'view/size', 'view/title']):
+            if all(elem in settings.allKeys() for elem in ['debugOutput', 'view/size', 'view/title']):
                 self.createDebugOutput(settings.value("view/title"), settings.value("debugOutput"),
-                                       settings.value("view/size"), settings.value("view/pos"))
+                                       settings.value("view/size"))
         settings.endArray()
 
     @Slot()

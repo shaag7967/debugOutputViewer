@@ -35,6 +35,5 @@ class DebugOutputController(QObject):
     @Slot()
     def terminate(self):
         # view is already closed
-        print('terminate DebugOutputController')
         self.debugOutput.stop()
         self.terminated.emit(self.debugOutput.getPortName())

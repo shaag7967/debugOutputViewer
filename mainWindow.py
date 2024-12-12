@@ -53,12 +53,10 @@ class MainWindow(QMainWindow):
 
                 self.signal_createDebugOutput.emit(dialog.getName(), settings)
 
-    def createDebugOutputView(self, viewTitle: str, size: QSize = None, pos: QPoint = None):
+    def createDebugOutputView(self, viewTitle: str, size: QSize = None):
         view = DebugOutputWindow(viewTitle)
         if size:
             view.resize(size)
-        if pos:
-            view.move(pos)
         self.mdiArea.addSubWindow(view)
         view.show()
         return view
@@ -83,7 +81,6 @@ class MainWindow(QMainWindow):
 
         settings.beginGroup("MainWindow")
         self.resize(settings.value("size", QSize(800, 800)))
-        self.move(settings.value("pos", QPoint(200, 200)))
         settings.endGroup()
 
     def saveSettings(self):
@@ -91,11 +88,9 @@ class MainWindow(QMainWindow):
 
         settings.beginGroup("MainWindow")
         settings.setValue("size", self.size())
-        settings.setValue("pos", self.pos())
         settings.endGroup()
 
     def closeEvent(self, event):
         self.signal_aboutToBeClosed.emit()
-        print("closeEvent")
         self.saveSettings()
         event.accept()

@@ -1,2 +1,2 @@
-pyserial
-pyside6
+pyserial>=3.5
+pyside6>=6.8.1

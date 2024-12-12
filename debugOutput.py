@@ -68,7 +68,6 @@ class DebugOutputReceiver:
         try:
             self.serialPort.open()
         except serial.SerialException:
-            # print("failed to open comport " + self.serialPort.port)
             return False
         return True
 
@@ -81,7 +80,6 @@ class DebugOutputReceiver:
         if self.thread is None:
             self.thread = Thread(target=self.receiveData, args=(self.rxQueue, self.terminateEvent))
             self.thread.start()
-            print("started rx")
 
     def stop(self):
         if self.thread:
@@ -89,7 +87,6 @@ class DebugOutputReceiver:
             self.thread.join()
             self.thread = None
             self.terminateEvent.clear()
-            print("stopped rx")
 
     def isReceiving(self):
         return self.thread and self.thread.is_alive()
@@ -127,7 +124,6 @@ class DebugOutputDataProcessor(QObject):
         if self.thread is None:
             self.thread = Thread(target=self.processData, args=(self.rawDataQueue, self.terminateEvent))
             self.thread.start()
-            print("started processor")
 
     def stop(self):
         if self.thread and self.thread.is_alive():
@@ -135,7 +131,6 @@ class DebugOutputDataProcessor(QObject):
             self.thread.join()
             self.thread = None
             self.terminateEvent.clear()
-            print("stopped processor")
 
     def getTimestamp(self):
         return int(round(time.time() * 1000))
